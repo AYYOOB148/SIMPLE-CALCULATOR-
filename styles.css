@@ -1,0 +1,71 @@
+*, *::Before, *::after {
+    box-sizing: border-box;
+    font-family: Default , sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: rgb(56, 55, 55)
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    /* Set default background color for all buttons to dark gray */
+    background-color: rgb(38, 37, 37);
+    color: white; /* Add this to make button text white */
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+/* Add this new rule for the "=" button */
+.calculator-grid > button[data-equals] {
+    background-color: orange;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgb(21, 20, 20);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .9);
+    font-size: 1.5rem;
+    /* Update this rule to make the numbers white and bold */
+    font-weight: bold;
+    color: white;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+    /* Update this rule to make the numbers white and bold */
+    font-weight: bold;
+}
+
+
